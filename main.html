@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewing</title>
+    <link rel="icon" href="/favicon/favicon (2).ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>
+       <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <button class="button-add-post">Добавить пост</button>
+            </div>
+        </div>
+       </div>
+ 
+    </header>
+    <main>
+        <section class="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class=" text-main-head text-center mt-5 fw-bold">Просмотр постов</h1>
+                    </div>
+                    </div>
+                    <div class="row">
+
+                    <div class="col-xl-12 col-lg-12 col-sm-12 m-auto text-center mb-3">
+                        <button class="btn btn-read-all   m-auto text-center">Читать все посты</button>
+                        
+                        </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-xl-12 col-lg-12 col-sm-12 mt-2 ">
+                                <select class="search-with-filter m-auto mb-3  " >
+                                    
+
+                                </select>
+                            </div>
+                          
+                                </div>
+
+                            </div>
+                            <div class="col-12 search-container">
+                        <input type="text" placeholder="поиск по постам" class="search-by-posts m-auto mb-3"> 
+                        
+                        <i class="fa fa-search favicon-search mb-3"></i>
+                    </div>
+
+                    </div>
+                    
+                </div>
+               
+            </div>
+            <div class="  container post-container mt-4 ">
+            </div>
+            <div class=" add-post-form">
+            
+                  
+                        <h1 class="display-block m-auto">Здесь вы можете создать свой пост</h1><br>
+                    
+                <div class="row display-block">
+                    <div class="col-12 mb-2 ">
+                        <small>Вы ввели не все!</small>
+                        <input type="text" placeholder="Введите  ваше имя" id="myPostName">
+                        </div>
+                        <div class="col-12 mb-2">
+                        <input type="text" placeholder="Введите  название  поста" id="myPostTitle">
+                        </div>
+                        <div class="col-12 mb-2">
+                            <textarea  placeholder="Введите ваш текст здесь..." id="myPostBody"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button class="button-send-post">Отправить</button>
+                       
+                        </div>
+                    
+                    </div>
+                </div>
+
+                <div class="container modal-edit">
+                    <div class="row">
+
+               
+                        <div class="col-10-offset">
+                                    
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="close close-edit-btn" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="edit-info-down">Редактирование поста</h4>
+                            <h6 class="edit-info">нажмите на текст для редактирования</h6>
+                        </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-12 text-center">
+                                <h5 contenteditable="true" class="text-center" id="titleEdit"></h5>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <textarea name="" contenteditable="true" class="text-center" id="textAreaEdit"></textarea>
+                            </div>
+                  
+                        </div>
+                        <div class="row">
+
+                       
+                        <div class="col-12">
+                            <button class="button-send-edit">Отправить</button>
+                          
+                        </div>
+                    </div>
+                    </div>
+        </section>
+        <div class="container other-error">
+
+            <div class="row">
+
+               
+                <div class="col-10-offset">
+                            
+                </div>
+                <div class="col-2">
+                    <button type="button" class="close close-modal-other" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+            </div>
+            <div class="row mt-0">
+                <div class="col-12 text-center ">
+                    <h1>Произошла ошибка :(</h1></div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 error-logo">
+                    <h2 class="eru">ERROR</h2>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 mt-5">
+                    <h1 class="">Попробуйте еще раз</h1>
+                </div>
+            </div>
+          </div>
+          <div class="overlay">
+            <div class=" load-window ">
+                        <h4 class="load-head ">Идет загрузка постов....</h4>
+                    </div>
+                </div>
+          <div class=" container modal-error">
+            <div class="row">
+
+           
+            <div class="col-10-offset">
+                        
+            </div>
+            <div class="col-2">
+                <button type="button" class="close close-modal-btn" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+        </div>
+         
+            <div class="col-12">
+                <img src="/img/errorAddPost.png" alt="произошла ошибка" class="img-fluid text-center">
+            </div>
+            <div class="col-12">
+                <h1>Увы, произошла ошибка и ваш пост не был добавлен. </h1>
+            </div>
+            <div class="col-12"> 
+                <h4>Вы можете попробовать еще раз через некоторое время</h4>
+            </div>
+            
+           
+        </div>
+    </main>
+    <script src="/js/script.js"></script>
+</body>
+</html>
