@@ -16,7 +16,7 @@
 @import "//fonts.fontstorage.com/import/dited.css";
 
 header {
-  background: src(/head-bg.png);
+  background: src(img/head-bg.png);
   background-position: center;
   background-color: #dcdcdc;
   background-size: contain;
